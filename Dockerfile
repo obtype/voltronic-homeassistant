@@ -31,7 +31,8 @@ RUN cd /build && cmake -DCMAKE_BUILD_TYPE=Release . && make -j2
 
 FROM alpine:latest
 
-# Copy inverter_poller binary from the build image into our result image.
-COPY --from=build_image /build/src/inverter_poller /
+WORKDIR /config
 
-ENTRYPOINT ["/inverter_poller"]
+COPY --from=build_image /build/src/inverter_poller /usr/local/bin/inverter_poller
+
+ENTRYPOINT ["/usr/local/bin/inverter_poller"]
