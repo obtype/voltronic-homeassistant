@@ -26,7 +26,7 @@ RUN apk update && apk add --no-cache g++ make cmake openssl-dev git
 COPY . /build/
 
 # Build the binary
-RUN cd /build && cmake -DCMAKE_BUILD_TYPE=Release . && make -j8
+RUN cd /build && cmake -DCMAKE_BUILD_TYPE=Release . && make -j2
 
 
 FROM alpine:latest
