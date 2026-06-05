@@ -1,0 +1,15 @@
+name: "Voltronic PI18 Monitor"
+version: "1.0.0"
+slug: "voltronic_pi18"
+description: "Zaychuk's auto-detecting Voltronic integration for PI18/PI30 inverters."
+url: "https://github.com/ZaychukAleksey/voltronic-homeassistant"
+arch:
+  - armhf
+  - aarch64
+  - amd64
+init: false
+devices:
+  - /dev/hidraw0
+privileged:
+  - SYS_RAWIO
+  - SYS_ADMIN
